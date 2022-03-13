@@ -1,0 +1,61 @@
+/////////// General //////////
+
+// Position
+$position-rel: relative;
+$position-abs: absolute;
+$position-fix: fixed;
+
+// Display
+$display-none: none;
+$display-block: block;
+
+// Width
+$width-content: 80%;
+
+// Color
+$color-red: #cc2329;
+$color-apple-green: #55eb4c;
+$color-green: #30b988;
+$color-light-green: #51d3a4;
+$color-brown: #c87f31;
+$color-middle-brown: #d3a97d;
+$color-light-brown: #e8c7a3;
+$color-gray: #748794;
+$color-middle-gray: #f3f3f8;
+$color-light-gray: #efefef;
+$color-violet: #17134b;
+$color-dark-blue: #3c589a;
+$color-light-blue: #3da5f1;
+$color-middle-blue: #0077b5;
+$color-sky-blue: #55acee;
+$color-blue: #0084ff;
+$color-orange: #ee8e2d;
+$color-white: #ffffff;
+$color-black: #000000;
+
+// Font-weight
+$font-regular: 400;
+$font-semibold: 600;
+$font-bold: 700;
+$font-black: 900;
+
+// Text
+$text-center: center;
+
+////////// Responsive design //////////
+
+$breakpoints: (
+  "laptop-tablet-min": 800px,
+  "laptop-tablet-mobile-xxl": 1200px,
+  "laptop-tablet-mobile-xl": 1150px,
+  "laptop-tablet-mobile-lg": 1075px,
+  "laptop-tablet-mobile-md": 1020px,
+  "laptop-tablet-mobile-sm": 970px,
+  "laptop-tablet-mobile-xs": 900px,
+  "tablet-mobile-md": 800px,
+  "tablet-mobile-sm": 730px,
+  "tablet-mobile-xs": 620px,
+  "mobile-md": 420px,
+  "mobile-sm": 360px,
+  "mobile-xs": 350px,
+);

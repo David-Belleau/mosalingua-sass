@@ -1,0 +1,120 @@
+#team {
+  @extend %bgc-cover-norepeat;
+  background-image: url(../images/team/background-team.svg);
+  margin: 2rem auto 5rem auto;
+  width: $width-content;
+}
+
+.team-content {
+  @extend %flex-column-centers;
+}
+
+.team-content h2 {
+  margin-bottom: 2rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  background-color: $color-light-gray;
+}
+
+.team-subtitle {
+  font-weight: $font-black;
+  font-size: 3.9rem;
+  margin-bottom: 1rem;
+  text-align: $text-center;
+}
+
+.team-allFaces {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(7, 1fr);
+  row-gap: 3rem;
+  column-gap: 2rem;
+  @include breakpoints("laptop-tablet-mobile-xxl") {
+    grid-template: repeat(3, 1fr) / repeat(5, 1fr);
+    column-gap: 1.5rem;
+  }
+  @include breakpoints("tablet-mobile-md") {
+    grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  }
+  @include breakpoints("mobile-md") {
+    grid-template: repeat(1, 1fr) / repeat(2, 1fr);
+  }
+}
+
+.team-face,
+.team-responsive {
+  position: $position-rel;
+}
+
+.team-responsive {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+  }
+}
+
+.team-face img:nth-child(1),
+.team-responsive img:nth-child(1) {
+  width: 12rem;
+  border-radius: 6rem;
+}
+
+.team-filter {
+  position: $position-abs;
+  bottom: 0.2rem;
+  left: 0;
+  width: 12rem;
+  height: 12rem;
+  opacity: 0;
+  z-index: 1;
+  border-radius: 6rem;
+  transition: all 0.2s ease;
+  background: rgba(44, 204, 166, 0.8);
+}
+
+.team-text {
+  position: $position-abs;
+  bottom: 4rem;
+  left: 3rem;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.2s ease;
+  font-size: 1.5rem;
+  font-weight: $font-regular;
+  text-align: $text-center;
+  color: $color-white;
+}
+
+.team-face:hover .team-filter,
+.team-face:hover .team-text,
+.team-responsive:hover .team-filter,
+.team-responsive:hover .team-text {
+  opacity: 1;
+}
+
+.team-text span {
+  font-size: 1rem;
+}
+
+.team-face img:last-child,
+.team-responsive img:last-child {
+  position: $position-abs;
+  top: 10rem;
+  right: 4rem;
+  width: 4rem;
+  z-index: 3;
+}
+
+.team-noface {
+  position: $position-rel;
+  border-radius: 10rem;
+  background-color: $color-middle-brown;
+}
+
+.team-noface p {
+  position: $position-abs;
+  top: 3.5rem;
+  left: 2.5rem;
+  font-weight: $font-regular;
+  font-size: 1.5rem;
+  color: $color-white;
+  cursor: pointer;
+}

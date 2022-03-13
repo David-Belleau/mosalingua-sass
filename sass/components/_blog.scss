@@ -1,0 +1,81 @@
+#blog {
+  background-image: url(../images/blog/background-blog.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: $color-light-gray;
+  padding: 2rem 0 3rem 0;
+}
+
+.blog-content {
+  @extend %flex-column-centers;
+}
+
+.blog-content h2 {
+  padding: 1.5rem 2.5rem;
+  font-size: 1.5rem;
+  border: 0.1rem solid $color-white;
+  background-color: $color-white;
+}
+
+.blog-allArticles {
+  @extend %flex-row-centers;
+  gap: 1.7rem;
+  margin-top: 2rem;
+  @include breakpoints("laptop-tablet-mobile-sm") {
+    width: 90%;
+  }
+  @include breakpoints("tablet-mobile-md") {
+    flex-direction: column;
+  }
+}
+
+.blog-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 50rem;
+  width: 30rem;
+  margin: 1.5rem 0;
+  background-color: $color-white;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  @include breakpoints("tablet-mobile-md") {
+    width: 80%;
+  }
+}
+
+.blog-display {
+  width: 100%;
+}
+
+.blog-details {
+  margin: 2rem;
+}
+
+.blog-details h3 {
+  font-size: 2.5rem;
+  color: $color-light-green;
+}
+
+.blog-details p {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+}
+
+.blog-interaction {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 0.1rem solid $color-light-gray;
+}
+
+.blog-icons img {
+  width: 2rem;
+}
+
+.blog-icons img:last-child {
+  margin-left: 0.5rem;
+}

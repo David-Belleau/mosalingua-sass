@@ -1,0 +1,66 @@
+#learning {
+  @extend %bgc-cover-norepeat;
+  background-image: url(../images/learning/background-learning.svg);
+  margin: 2rem auto 5rem auto;
+  width: $width-content;
+}
+
+.learning-content {
+  @extend %flex-column-centers;
+  text-align: $text-center;
+}
+
+.learning-content h2 {
+  font-weight: $font-black;
+  font-size: 3.8rem;
+}
+
+.learning-allMethods {
+  @extend %flex-row-centers;
+  margin: 2.5rem 0;
+  gap: 2rem;
+  @include breakpoints("tablet-mobile-md") {
+    flex-direction: column;
+  }
+}
+
+.learning-method {
+  @extend %flex-column-centers;
+  height: clamp(17rem, 32vh, 35rem);
+  width: clamp(23rem, 27vw, 35rem);
+  padding: 2rem 1rem;
+  cursor: pointer;
+  @include breakpoints("tablet-mobile-md") {
+    width: 90%;
+  }
+}
+
+.learning-method:hover {
+  border-radius: 2rem;
+  box-shadow: 0 0 0.7rem 0.7rem $color-light-gray;
+  transition: all 0.3s;
+}
+
+.learning-method img {
+  width: clamp(6rem, 8vw, 11rem);
+}
+
+.learning-method h3 {
+  color: $color-light-green;
+  margin: 1rem 0 1.5rem 0;
+  font-size: 2.4rem;
+}
+
+.learning-method p {
+  font-size: 1.5rem;
+}
+
+.learning-more {
+  border-bottom: 0.1rem dotted $color-light-green;
+}
+
+.learning-more a {
+  color: $color-light-green;
+  font-size: 2rem;
+  font-weight: $font-semibold;
+}

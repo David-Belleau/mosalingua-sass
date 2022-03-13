@@ -1,0 +1,23 @@
+#press {
+  background-color: $color-middle-gray;
+  padding: 3rem 0;
+  .press-content {
+    @extend %flex-row-centers;
+    gap: clamp(3rem, 10vw, 7rem);
+    @include breakpoints("laptop-tablet-mobile-lg") {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+  .press-content img {
+    max-width: 100%;
+    @include breakpoints("laptop-tablet-mobile-lg") {
+      max-width: 50%;
+    }
+  }
+  .press-responsive {
+    @include breakpoints("laptop-tablet-mobile-lg") {
+      display: $display-none;
+    }
+  }
+}

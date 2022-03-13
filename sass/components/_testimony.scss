@@ -1,0 +1,82 @@
+#testimony {
+  @extend %bgc-cover-norepeat;
+  background-image: url(../images/testimony/background-testimony.svg);
+  padding: 3rem 0 5rem 0;
+}
+
+.testimony-content {
+  @extend %flex-column-centers;
+}
+
+.testimony-content h2 {
+  margin-bottom: 2rem;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.7rem;
+  border: 0.1rem solid $color-white;
+  background-color: $color-white;
+}
+
+.testimony-subtitle {
+  margin-bottom: 5rem;
+  font-weight: $font-black;
+  font-size: 3.6rem;
+  text-align: $text-center;
+  color: $color-white;
+}
+
+.testimony-allTestimonials {
+  @extend %flex-row-centers;
+  gap: 3rem;
+  width: 99%;
+  margin: 0 auto;
+  @include breakpoints("tablet-mobile-md") {
+    flex-direction: column;
+  }
+}
+
+.testimony-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35rem;
+  width: 30rem;
+  padding: 2rem;
+  font-size: 1.5rem;
+  border: 0.1rem solid $color-white;
+  border-radius: 0.5rem;
+  background-color: $color-white;
+  @include breakpoints("tablet-mobile-md") {
+    width: $width-content;
+    height: 34vh;
+  }
+}
+
+.testimony-identity {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: $position-rel;
+  gap: 1rem;
+  margin-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.testimony-identity::before {
+  content: "";
+  position: $position-abs;
+  bottom: 9rem;
+  height: 0.1rem;
+  width: 100%;
+  background-color: #74879444;
+}
+
+.testimony-identity img {
+  width: 6rem;
+  border-radius: 5rem;
+  border: 0.2rem solid $color-light-green;
+}
+
+.testimony-identity span {
+  font-size: 1.7rem;
+}

@@ -1,0 +1,89 @@
+footer {
+  display: grid;
+  grid-template: 1fr 10% / 10% 1fr 10%;
+  background-color: $color-violet;
+  padding: 4rem 0 1rem 0;
+}
+
+#footer-content {
+  grid-area: 1 / 2 / 3 / 3;
+  @include breakpoints("laptop-tablet-mobile-xs") {
+    grid-area: 1 / 1 / 3 / 4;
+    width: 95%;
+    margin: 0 auto;
+  }
+}
+
+.footer-allMosalingua {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  @include breakpoints("tablet-mobile-md") {
+    flex-direction: column;
+  }
+}
+
+.footer-logo {
+  width: auto;
+}
+
+.footer-allMosalingua h3 {
+  font-weight: $font-semibold;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+  color: $color-white;
+}
+
+.footer-allMosalingua a {
+  margin-bottom: 1rem;
+  font-weight: $font-regular;
+  font-size: 1.6rem;
+  color: $color-white;
+}
+
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: start;
+}
+
+.footer-rights-networks {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  border-top: 0.1rem solid $color-white;
+}
+
+.footer-rights {
+  @extend %flex-row-centers;
+  margin-top: 2rem;
+}
+
+.footer-copyright {
+  margin-right: 1.5rem;
+  color: $color-gray;
+}
+
+.footer-rights a {
+  color: $color-white;
+}
+
+.footer-rights span {
+  padding: 0 0.5rem;
+  color: $color-white;
+}
+
+.footer-networks {
+  margin: 2rem 0 1rem 0;
+}
+
+.footer-networks img {
+  width: 2rem;
+  margin-right: 1rem;
+}

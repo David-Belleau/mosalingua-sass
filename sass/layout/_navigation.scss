@@ -1,0 +1,348 @@
+#nav-content {
+  grid-area: 2 / 1 / 3 / 3;
+  background-color: $color-brown;
+  padding: 1.7rem 0;
+  @include breakpoints("tablet-mobile-md") {
+    padding: 1.5rem;
+    background-color: $color-white;
+  }
+}
+
+.nav-burgerMenu {
+  @include breakpoints("tablet-mobile-md") {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+.nav-logo {
+  display: $display-none;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+    margin: 0 auto;
+  }
+}
+
+#navigate,
+#navigate-responsive1,
+#navigate-responsiveApps,
+#navigate-responsive2,
+#navigate-responsiveResources,
+#navigate-responsive3,
+#navigate-responsive4,
+label {
+  display: $display-none;
+  position: $position-rel;
+}
+
+.nav-btn {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+#navigate:checked + .nav-btn {
+  @include breakpoints("tablet-mobile-md") {
+    position: $position-fix;
+  }
+}
+
+.nav-icon {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+    position: $position-rel;
+    width: 2rem;
+    height: 0.2rem;
+    background-color: $color-black;
+  }
+}
+
+#navigate:checked + .nav-btn .nav-icon {
+  @include breakpoints("tablet-mobile-md") {
+    background-color: transparent;
+  }
+}
+
+.nav-icon::before,
+.nav-icon::after {
+  @include breakpoints("tablet-mobile-md") {
+    content: "";
+    display: $display-block;
+    position: $position-abs;
+    width: 2rem;
+    height: 0.2rem;
+    left: 0;
+    transition: all 0.2s;
+    background-color: $color-black;
+  }
+}
+
+.nav-icon::before {
+  @include breakpoints("tablet-mobile-md") {
+    top: -0.6rem;
+  }
+}
+
+#navigate:checked + .nav-btn .nav-icon:before {
+  @include breakpoints("tablet-mobile-md") {
+    top: 0;
+    transform: rotate(130deg);
+  }
+}
+
+.nav-icon::after {
+  @include breakpoints("tablet-mobile-md") {
+    top: 0.6rem;
+  }
+}
+
+#navigate:checked + .nav-btn .nav-icon:after {
+  @include breakpoints("tablet-mobile-md") {
+    top: 0;
+    transform: rotate(-130deg);
+  }
+}
+
+nav {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+    position: $position-fix;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    top: 5rem;
+    left: 0;
+    background-color: $color-white;
+    overflow-y: auto;
+  }
+}
+
+#navigate:checked ~ nav {
+  @include breakpoints("tablet-mobile-md") {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
+.nav-list {
+  @extend %flex-row-centers;
+  position: $position-rel;
+  gap: 7rem;
+  font-weight: $font-regular;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+    flex-direction: column;
+    top: 55%;
+    left: 55%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#navigate:checked ~ nav .nav-list {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+  }
+}
+
+.nav-btnResponsive {
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+  }
+}
+
+.nav-list label img {
+  position: $position-abs;
+  bottom: 2.6rem;
+  right: Min(9.5rem, 11vw);
+  transition: transform 0.2s ease-in-out;
+}
+
+.nav-apps label img,
+.nav-resources label img {
+  position: $position-abs;
+  bottom: 2.6rem;
+  right: Min(15rem, 17vw);
+}
+
+#navigate-responsive1:checked + label img,
+#navigate-responsiveApps:checked + label img,
+#navigate-responsive2:checked + label img,
+#navigate-responsiveResources:checked + label img,
+#navigate-responsive3:checked + label img,
+#navigate-responsive4:checked + label img {
+  transform: rotate(180deg);
+}
+
+.nav-btnResponsive img {
+  display: $display-none;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+    width: 2.2rem;
+    cursor: pointer;
+  }
+}
+
+.nav-list li:not(:last-child)::after {
+  @include breakpoints("tablet-mobile-md") {
+    content: "";
+    position: $position-abs;
+    width: 91%;
+    height: 0.1rem;
+    margin-top: -2rem;
+    background-color: #dee0e9;
+  }
+}
+
+.nav-list a {
+  font-size: 1.5rem;
+  color: $color-white;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-block;
+    padding-bottom: 3rem;
+    font-weight: $font-semibold;
+    color: $color-black;
+  }
+}
+
+.nav-dropdown1,
+.nav-dropdown2,
+.nav-dropdown3,
+.nav-dropdown4,
+.nav-dropdownApps,
+.nav-dropdownResources {
+  @include breakpoints("laptop-tablet-min") {
+    display: $display-none;
+    position: $position-abs;
+    z-index: 1;
+    background-color: $color-white;
+    min-width: 22rem;
+    box-shadow: 0 0 0.4rem 0.1rem $color-gray;
+    border-radius: 0.5rem;
+    padding: 1rem;
+  }
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+    margin-left: 2rem;
+  }
+}
+
+.nav-apps,
+.nav-resources {
+  position: $position-rel;
+}
+
+.nav-list li:nth-child(1):hover,
+.nav-list li:nth-child(2):hover,
+.nav-list li:nth-child(3):hover,
+.nav-list li:nth-child(4):hover {
+  @include breakpoints("laptop-tablet-min") {
+    @include navigation(
+      ".nav-dropdown1",
+      ".nav-dropdown2",
+      ".nav-dropdown3",
+      ".nav-dropdown4"
+    );
+  }
+}
+
+#navigate-responsive1:checked ~,
+#navigate-responsive2:checked ~,
+#navigate-responsive3:checked ~,
+#navigate-responsive4:checked ~ {
+  @include navigation(
+    ".nav-dropdown1",
+    ".nav-dropdown2",
+    ".nav-dropdown3",
+    ".nav-dropdown4"
+  );
+}
+
+.nav-dropdownApps,
+.nav-dropdownResources {
+  @include breakpoints("laptop-tablet-min") {
+    top: 1rem;
+    left: 18rem;
+  }
+}
+
+.nav-apps:hover .nav-dropdownApps,
+.nav-resources:hover .nav-dropdownResources {
+  @include breakpoints("laptop-tablet-min") {
+    display: $display-block;
+  }
+}
+
+#navigate-responsiveApps:checked ~ .nav-dropdownApps,
+#navigate-responsiveResources:checked ~ .nav-dropdownResources {
+  display: $display-block;
+}
+
+.nav-dropdown1 a,
+.nav-dropdown2 a,
+.nav-dropdown3 a,
+.nav-dropdown4 a,
+.nav-dropdownApps a,
+.nav-dropdownResources a {
+  @include breakpoints("laptop-tablet-min") {
+    display: $display-block;
+    padding: 1rem;
+    font-weight: $font-regular;
+    color: $color-black;
+  }
+  @include breakpoints("tablet-mobile-md") {
+    font-weight: normal;
+  }
+}
+
+.nav-interaction {
+  display: $display-none;
+  @include breakpoints("tablet-mobile-md") {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 12rem 0 0 0;
+    padding: 3rem 0 6rem 0;
+    background-color: $color-light-gray;
+  }
+}
+
+.nav-btnConnexion {
+  border: none;
+  border-radius: 3rem;
+  padding: 1.5rem 12rem;
+  font-weight: $font-semibold;
+  font-size: 1.5rem;
+  background-color: $color-brown;
+  color: $color-white;
+  cursor: pointer;
+  @include breakpoints("mobile-xs") {
+    padding: 1.5rem 9rem;
+  }
+}
+
+.nav-languageSite {
+  @extend %flex-row-centers;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.nav-languageSite p:nth-child(1) {
+  font-size: 1.5rem;
+}
+
+.nav-languageChoice {
+  display: $display-none;
+  position: $position-abs;
+  top: -23.6rem;
+  z-index: 1;
+  border: 0.1rem solid $color-white;
+  padding: 0.4rem 1.7rem 0.5rem 2rem;
+  background-color: $color-white;
+}

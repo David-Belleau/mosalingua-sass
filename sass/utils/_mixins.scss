@@ -1,0 +1,67 @@
+////////// General //////////
+
+@mixin navigation($desc...) {
+  @for $i from 0 to length($desc) {
+    #{nth($desc, $i + 1)} {
+      display: $display-block;
+    }
+  }
+}
+
+////////// Responsive design //////////
+
+@mixin breakpoints($point) {
+  @if $point == laptop-tablet-min {
+    @media screen and (min-width: map-get($breakpoints, "laptop-tablet-min")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-xxl {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-xxl")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-xl {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-xl")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-lg {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-lg")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-md {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-md")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-sm {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-sm")) {
+      @content;
+    }
+  } @else if $point == laptop-tablet-mobile-xs {
+    @media screen and (max-width: map-get($breakpoints, "laptop-tablet-mobile-xs")) {
+      @content;
+    }
+  } @else if $point == tablet-mobile-md {
+    @media screen and (max-width: map-get($breakpoints, "tablet-mobile-md")) {
+      @content;
+    }
+  } @else if $point == tablet-mobile-sm {
+    @media screen and (max-width: map-get($breakpoints, "tablet-mobile-sm")) {
+      @content;
+    }
+  } @else if $point == tablet-mobile-xs {
+    @media screen and (max-width: map-get($breakpoints, "tablet-mobile-xs")) {
+      @content;
+    }
+  } @else if $point == mobile-md {
+    @media screen and (max-width: map-get($breakpoints, "mobile-md")) {
+      @content;
+    }
+  } @else if $point == mobile-sm {
+    @media screen and (max-width: map-get($breakpoints, "mobile-sm")) {
+      @content;
+    }
+  } @else if $point == mobile-xs {
+    @media screen and (max-width: map-get($breakpoints, "mobile-xs")) {
+      @content;
+    }
+  }
+}

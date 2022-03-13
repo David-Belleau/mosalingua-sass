@@ -1,0 +1,93 @@
+header {
+  display: grid;
+}
+
+#header-content {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5rem 0;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+  }
+}
+
+.header-logo {
+  width: auto;
+}
+
+.header-interaction {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5rem;
+  margin-right: 10rem;
+  @include breakpoints("tablet-mobile-md") {
+    display: $display-none;
+  }
+}
+
+.header-btn {
+  padding: 1.5rem 7rem;
+  font-weight: $font-semibold;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 3rem;
+  color: $color-white;
+  background-color: $color-light-green;
+  cursor: pointer;
+}
+
+.header-multilingual,
+.nav-multilingual {
+  @extend %flex-column-centers;
+  position: $position-rel;
+  font-size: 1.5rem;
+  border: none;
+}
+
+.header-language,
+.nav-language {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  border: 0.1rem solid $color-black;
+  padding: 1.5rem 1.5rem 1rem 1.5rem;
+  background-color: $color-white;
+}
+
+.header-multilingual:focus > .header-language,
+.nav-multilingual:focus > .nav-language {
+  border: 0.1rem solid $color-light-gray;
+}
+
+.header-language img,
+.nav-language img {
+  width: 2rem;
+}
+
+.header-languageChoice,
+.nav-languageChoice {
+  display: $display-none;
+  position: $position-abs;
+  top: 4.2rem;
+  z-index: 1;
+  border: 0.1rem solid $color-white;
+  background-color: $color-white;
+  padding: 0.4rem 1.7rem 0.5rem 2rem;
+}
+
+.header-multilingual:focus .header-languageChoice,
+.nav-multilingual:focus .nav-languageChoice {
+  display: $display-block;
+}
+
+.header-languageChoice p,
+.nav-languageChoice p {
+  color: $color-black;
+  padding: 1rem 0;
+  text-align: $text-center;
+}

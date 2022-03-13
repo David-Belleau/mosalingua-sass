@@ -1,0 +1,136 @@
+#sidebar {
+  position: $position-fix;
+  z-index: 9;
+  @include breakpoints("laptop-tablet-mobile-xl") {
+    display: flex;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+  }
+}
+
+.sidebar-facebook,
+.sidebar-twitter,
+.sidebar-pinterest,
+.sidebar-linkedin,
+.sidebar-telegram,
+.sidebar-whatsapp,
+.sidebar-messenger,
+.sidebar-more,
+.sidebar-responsive {
+  display: flex;
+  flex-direction: column;
+  position: $position-rel;
+  top: 11rem;
+  padding: 0.4rem;
+  cursor: pointer;
+  @include breakpoints("laptop-tablet-mobile-xl") {
+    flex-direction: row;
+    flex-grow: 1;
+    top: 0;
+  }
+}
+
+.sidebar-facebook {
+  background-color: $color-dark-blue;
+}
+
+.sidebar-twitter {
+  background-color: $color-sky-blue;
+}
+
+.sidebar-twitter span {
+  align-self: center;
+  font-weight: $font-semibold;
+  color: $color-white;
+}
+
+.sidebar-pinterest {
+  background-color: $color-red;
+}
+
+.sidebar-linkedin {
+  background-color: $color-middle-blue;
+}
+
+.sidebar-telegram {
+  background-color: $color-light-blue;
+}
+
+.sidebar-whatsapp {
+  background-color: $color-apple-green;
+}
+
+.sidebar-messenger {
+  background-color: $color-blue;
+}
+
+.sidebar-more {
+  background-color: $color-orange;
+}
+
+.sidebar-facebook img,
+.sidebar-twitter img,
+.sidebar-pinterest img,
+.sidebar-linkedin img,
+.sidebar-telegram img,
+.sidebar-whatsapp img,
+.sidebar-messenger img,
+.sidebar-more img {
+  width: 3.2rem;
+  @include breakpoints("laptop-tablet-mobile-xl") {
+    width: 100%;
+  }
+}
+
+.sidebar-facebook p,
+.sidebar-twitter p,
+.sidebar-pinterest p,
+.sidebar-linkedin p,
+.sidebar-telegram p,
+.sidebar-whatsapp p,
+.sidebar-messenger p,
+.sidebar-more p,
+.sidebar-responsive p {
+  display: $display-none;
+  position: $position-abs;
+  left: 2rem;
+  z-index: 1;
+  padding: 0.5rem;
+  border: 0.1rem solid $color-black;
+  font-size: 1.2rem;
+  background-color: $color-white;
+  color: $color-black;
+}
+
+.sidebar-facebook:hover p,
+.sidebar-twitter:hover p,
+.sidebar-pinterest:hover p,
+.sidebar-linkedin:hover p,
+.sidebar-telegram:hover p,
+.sidebar-whatsapp:hover p,
+.sidebar-messenger:hover p,
+.sidebar-more:hover p,
+.sidebar-responsive:hover p {
+  display: $display-block;
+}
+
+.sidebar-responsive {
+  @include breakpoints("laptop-tablet-mobile-xl") {
+    display: $display-none;
+  }
+}
+
+.sidebar-responsive img {
+  width: 1.7rem;
+  margin: 1rem 1.5rem 0 0;
+}
+
+#sidebar-footer {
+  display: $display-none;
+  @include breakpoints("laptop-tablet-mobile-xl") {
+    display: $display-block;
+    height: 4rem;
+    color: $color-white;
+  }
+}
